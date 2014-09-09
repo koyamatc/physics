@@ -30,7 +30,7 @@
 
     
     <div class="row"><div class="col-sm-4">
-  <a href="/d3/"><h4><span class="glyphicon glyphicon-arrow-left text-white"> d3 home</span></h4></a>
+  <a href="/physics/"><h4><span class="glyphicon glyphicon-arrow-left text-white"> physics home</span></h4></a>
 
 </div></div>
 <h2>Displacement,velocity and time</h2>
@@ -44,8 +44,9 @@
 
 <ul>
 <li>magnitude/size and direction</li>
-<li>displacement  -- 5 meters to the left</li>
-<li>velocity -- 5/2 m/s to the left</li>
+<li>displacement  -- 5 meters to the right</li>
+<li>velocity -- 5/2 m/s to the right</li>
+<li>displacement = velocity * time</li>
 </ul></li>
 <li><p>Scalars</p>
 
@@ -53,13 +54,51 @@
 <li>magnitude/size</li>
 <li>distance -- 5 meters</li>
 <li>speed -- 5/2 m/s </li>
+<li>distance = speed * time</li>
 </ul></li>
 </ul>
 
 <hr>
 
-<p><h3>A brick moves 5 meters in 2 seconds.</h3> 
+<p><h4>A brick moves 5 meters in 2 seconds.</h4> 
  <div id="svg"></div></p>
+
+<hr>
+
+<h3 id="toc_1">Calculating average velocity or speed</h3>
+
+<p>If Jun was able to travel 5km north in 1 hour in his car, 
+what was his velocity?</p>
+
+<p><em>Average velocity</em>
+<script type="math/tex; mode=display">
+\vec{v}=\frac{\vec{s}}{\Delta t} 
+\qquad
+\vec{v}:velocity \quad
+\vec{s}:displacement \quad
+\Delta t:change \quad in \quad time
+</script>
+<script type="math/tex; mode=display">
+\vec{v}=\frac{5km}{1 hour} \quad north 
+</script>  </p>
+
+<hr>
+
+<p><em>Average speed or rate</em>
+<script type="math/tex; mode=display">
+r=\frac{d}{\Delta t}
+\qquad
+r:rate \quad or \quad speed  \quad
+d:distance \quad
+\Delta t:change \quad in \quad time
+</script>
+$$r=\frac{5km}{1 hour}$$
+$$\quad=\frac{5km}{1 hour}*\frac{1000}{1}*\frac{m}{km}$$
+$$\quad=5000*\frac{m}{hour}$$
+$$\quad=5000*\frac{m}{hour}*\frac{1}{3600}*\frac{hour}{seconds}$$
+$$\quad=1.39\frac{m}{s}$$</p>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 

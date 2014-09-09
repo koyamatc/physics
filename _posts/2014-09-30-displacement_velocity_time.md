@@ -9,20 +9,57 @@ categories: OneD-Motion
  
 + Vectors
   - magnitude/size and direction
-  - displacement  -- 5 meters to the left
-  - velocity -- 5/2 m/s to the left
+  - displacement  -- 5 meters to the right
+  - velocity -- 5/2 m/s to the right
+  - displacement = velocity * time
 
 + Scalars
   - magnitude/size
   - distance -- 5 meters
   - speed -- 5/2 m/s 
-
+  - distance = speed * time
 
 ----
 
- <h3>A brick moves 5 meters in 2 seconds.</h3> 
+ <h4>A brick moves 5 meters in 2 seconds.</h4> 
  <div id="svg"></div>
 
+----
+
+### Calculating average velocity or speed
+
+If Jun was able to travel 5km north in 1 hour in his car, 
+what was his velocity?
+
+_Average velocity_
+{% math %}
+\vec{v}=\frac{\vec{s}}{\Delta t} 
+\qquad
+\vec{v}:velocity \quad
+\vec{s}:displacement \quad
+\Delta t:change \quad in \quad time
+{% endmath %}
+{% math %}
+\vec{v}=\frac{5km}{1 hour} \quad north 
+{% endmath %}  
+
+--------
+
+_Average speed or rate_
+{% math %}
+r=\frac{d}{\Delta t}
+\qquad
+r:rate \quad or \quad speed  \quad
+d:distance \quad
+\Delta t:change \quad in \quad time
+{% endmath %}
+$$r=\frac{5km}{1 hour}$$
+$$\quad=\frac{5km}{1 hour}*\frac{1000}{1}*\frac{m}{km}$$
+$$\quad=5000*\frac{m}{hour}$$
+$$\quad=5000*\frac{m}{hour}*\frac{1}{3600}*\frac{hour}{seconds}$$
+$$\quad=1.39\frac{m}{s}$$
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 
