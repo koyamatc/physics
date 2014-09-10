@@ -59,6 +59,41 @@ $$\quad=5000*\frac{m}{hour}$$
 $$\quad=5000*\frac{m}{hour}*\frac{1}{3600}*\frac{hour}{seconds}$$
 $$\quad=1.39\frac{m}{s}$$
 
+------
+
+### Solving for time
+
+Jun is running at a constant velocity of 3m/s to the east.
+
+How long will it take him to travel 720 meters?
+
+r: rate or speed, d: distance, t: time 
+$$r=\frac{d}{t} \rightarrow t=\frac{d}{r}$$
+$$t=\frac{720m}{3m/s}=240seconds$$
+
+--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+$$\vec{v}:velocity \quad \vec{s}:displacement \quad t:time$$
+$$\vec{v}=\frac{\vec{s}}{t} \rightarrow t=\frac{\vec{s}}{\vec{v}}$$
+$$t=\frac{720m \quad east}{3m/s}=240seconds \quad east$$
+
+
+------
+
+### displacement from time and velocity
+
+If Jun travels for 1 minute at 5 m/s to the south, 
+
+how much will he be displaced?
+
+$$\vec{v}:velocity=5 m/s$$
+$$\vec{s}:displacement$$
+$$t:time=1minute$$
+$$\vec{v}=\frac{\vec{s}}{t} \rightarrow \vec{s}= \vec{v}*t$$
+$$\vec{s}= \vec{v}*t = 5\frac{m}{s}*1minute
+=5\frac{m}{s}*1minute*\frac{60}{1}*\frac{s}{minute}
+=300m \quad to \quad the \quad south$$
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
