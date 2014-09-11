@@ -89,6 +89,24 @@ $$\Delta t=\frac{\vec{v_{f}}-\vec{v_{i}}}{\vec{a_{c}}}
 
 ### Deriving displacement as a function of time, acceleration and initial velocity
 
+<div class="panel">
+	Throw a ball straight up into the air.
+	$$go \quad upward:positive$$
+	$$go \quad downward:negative$$
+	$$initial \quad velocity:\vec{v_{i}}=19.6m/s$$
+	$$gravity \quad of \quad the \quad earth:g=9.8m/s^2$$
+</div>
+<div class="panel">
+	$$\vec{F}=m\vec{a} 
+	\qquad 
+	(\vec{F}:force \quad 
+	m:mass \quad 
+	\vec{a}:acceleration)$$
+</div>
+
+
+------
+
 ### Plotting projectile displacement, acceleration and velocity
 
 ### Projectile height given time
