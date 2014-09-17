@@ -228,11 +228,14 @@ $$\vec{s}
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div id="svg02"></div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div id="svg03"></div>
+    </div>
+    <div class="col-sm-4">
+        <div id="svg04"></div>
     </div>
 </div>
 
@@ -240,7 +243,78 @@ $$\vec{s}
 
 <h3 id="toc_4">Projectile height given time</h3>
 
+<div class="panel-body">
+    Throw a ball in the air.    How high in the air?
+</div>
+
+<div class="panel">
+    Air resistance is negligible.
+
+    $$\Delta t = 5seconds \quad in \quad the \quad air.$$
+    time upward = time downward
+    _case upward_
+    $$\Delta t_{up}=2.5seconds$$
+    $$initial \quad velocity:\vec{v_{i}}$$
+    $$final \quad velocity:\vec{v_{f}}=0$$
+    $$gravity \quad acceleration:\vec{a_{g}}=-9.8m/s^2$$ 
+    $$change \quad in \quad velocity:
+    \Delta \vec{v}=\vec{v_{f}}-\vec{v_{i}} \centerdot \Delta t
+    =(0-\vec{v_{i}}) \centerdot \Delta t
+    =-\vec{v_{i}}$$
+    $$\Delta \vec{v} = \vec{a} \centerdot \Delta t$$
+</div>
+
+<p>$$\Delta \vec{v} =-9.8m/s^2 \centerdot 2.5s=-24.5m/s$$
+$$\Delta \vec{v} =-\vec{v_{i}}=-24.5m/s$$
+$$\vec{v_{i}}=24.5m/s$$</p>
+
+<div class="panel">
+    $$displacement:\vec{s} = \vec{v_{avg}} \centerdot \Delta t$$
+</div>
+
+<p>$$\vec{s}=\frac{24.5 + 0}{2}m/s \centerdot 2.5s=30.625m$$</p>
+
+<hr>
+
 <h3 id="toc_5">Deriving max projectile displacement given time</h3>
+
+<div class="panel">
+    $$\Delta t:total \quad time \quad in \quad the \quad air $$
+    $$\Delta t_{up}= \frac{\Delta t}{2}$$
+    $$initial \quad velocity:\vec{v_{i}}$$
+    $$final \quad velocity:\vec{v_{f}}=0$$
+    $$change \quad in \quad velocity:
+    \Delta \vec{v}=\vec{v_{f}}-\vec{v_{i}}
+    =0-\vec{v_{i}}
+    =-\vec{v_{i}}$$
+    $$\Delta \vec{v} = \vec{a} \centerdot \Delta t$$
+    $$average \quad velocity:\frac{\vec{v_{i}}+\vec{v_{f}}}{2}$$ 
+    $$displacement:\vec{s} = \vec{v_{avg}} \centerdot \Delta t$$
+</div>
+
+<p>change in velocity equals to minus initial velocity
+$$\Delta \vec{v} 
+=-\vec{v_{i}}
+= -9.8m/s^2 \centerdot \frac{\Delta t}{2}$$
+initial velocity is
+$$\vec{v_{i}}=4.9m/s^2 \centerdot \Delta t$$</p>
+
+<p>displacement is
+$$\vec{s} 
+= \frac{\vec{v_{i}}+\vec{v_{f}}}{2} \centerdot \frac{\Delta t}{2}
+\quad
+=\frac{4.9m/s^2 \centerdot \Delta t+0}{2}\centerdot \frac{\Delta t}{2}
+\quad
+=\frac{4.9m/s^2 \centerdot (\Delta t)^2}{4}
+\quad
+=1.225m/s^2 \centerdot (\Delta t)^2$$</p>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        max displacement
+    </div>
+    $$\vec{s_{max}}=1.225m/s^2 \centerdot (\Delta t)^2$$
+</div>
 
 <h3 id="toc_6">Impact velocity given height</h3>
 
@@ -603,6 +677,120 @@ svg03.selectAll(".point03")
       .attr("class","text03")
       .attr("x",function(d){return scale03X(d.x)})
       .attr("y",function(d){return scale03Y(d.y)})
+      .text(function(d){return d.text})
+      .attr("stroke","#fff")
+      .attr("font-size","16px")
+      .style("fill","white");        
+
+/**
+    acceleration
+*/
+
+var svg04 = d3.select("#svg04")
+                .append("svg")
+                .attr("height",height)
+                .attr("width",width);
+
+/* 軸 */
+var scale04X = d3.scale.linear()
+                .domain([-0.5,4.2])
+                .range([50,380]);
+var scale04Y = d3.scale.linear()
+                .domain([-22,22])
+                .range([360,30]);
+
+var xAxis04 = d3.svg.axis()
+                  .scale(scale04X)
+                  .tickValues([1, 2, 3, 4])
+                  .tickPadding(5)
+                  .tickFormat(d3.format("d"));
+
+var xAxis04Group = svg04.append("g")
+                      .attr("transform","translate(0,"+ scale04Y(0)+")")
+                      .attr("stroke","white")
+                      .style("fill","none")
+                      .call(xAxis04);   
+
+var yAxis04 = d3.svg.axis()
+                  .scale(scale04Y)
+                  .orient(["left"])
+                  .tickPadding(0)
+                  .tickValues([-20,-10,0,10,20]);
+
+var yAxis04Group = svg04.append("g")
+.attr("transform","translate(" + scale04X(0) + ",0)")
+                      .attr("stroke","white")
+                      .style("fill","none")
+                      .call(yAxis04);                                              
+// grid
+var gridX04 = [1,2,3,4];
+var gridY04 = [-20,-10,10,20];
+
+svg04.selectAll(".gridX04")
+    .data(gridX04)
+    .enter()
+    .append("line")
+    .attr("x1", function(d){return scale04X(d);})
+    .attr("y1", function(d){return scale04Y(-20);})
+    .attr("x2", function(d){return scale04X(d);})
+    .attr("y2", function(d){return scale04Y(20);})
+    .attr("class","gridX04")
+    .attr("opacity",10)
+    .attr("stroke","#666");
+
+svg04.selectAll(".gridY04")
+    .data(gridY04)
+    .enter()
+    .append("line")
+    .attr("x1", function(d){return scale04X(0);})
+    .attr("y1", function(d){return scale04Y(d);})
+    .attr("x2", function(d){return scale04X(4);})
+    .attr("y2", function(d){return scale04Y(d);})
+    .attr("class","gridY04")
+    .attr("opacity",10)
+    .attr("stroke","#666");
+
+var point04Data = [-9.8,-9.8,-9.8,-9.8,-9.8];
+
+svg04.selectAll(".point04")
+                .data(point04Data)
+                .enter()
+                .append("circle")
+                .attr("cx",function(d,i){return scale04X(i) })
+                .attr("cy",function(d,i){return scale04Y(d) })
+                .attr("r",4)
+                .attr("stroke","gold")
+                .style("fill","gold")
+                .attr("class","point04");
+
+    var line04Data = [];
+    for (var i = 0; i <= 4; i++) {
+                    line04Data.push(i);
+                };          
+    var line04 = d3.svg.line()
+        .x(function(d) { return scale04X(d); })
+        .y(function(d) { return scale04Y(-9.8); })
+        .interpolate("linear");
+
+    svg04.append("path")
+          .attr("d", line04(line04Data))
+          .attr("stroke", "gold")
+          .attr("stroke-width", 2)
+          .attr("fill", "none");   
+  
+  /* texts */    
+  var text04Data = [
+        {"x":-0.5,"y":21.5,"text":"m/s^2"},
+        {"x":4.1,"y":-2,"text":"t"},
+        {"x":1.5,"y":21,"text":"Acceleration"} ];    
+  
+  svg04.selectAll(".text04")
+      .data(text04Data)
+      .enter()
+      .append("text")
+      .attr("class","text04")
+      .attr("x",function(d){return scale04X(d.x)})
+      .attr("y",function(d){return scale04Y(d.y)})
       .text(function(d){return d.text})
       .attr("stroke","#fff")
       .attr("font-size","16px")

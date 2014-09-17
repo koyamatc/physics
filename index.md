@@ -7,6 +7,9 @@ layout: default
 
 - - -
 
+__Khan Academy__ で勉強したことのまとめです
+===
+
 ###index
 
 <div class="row">
