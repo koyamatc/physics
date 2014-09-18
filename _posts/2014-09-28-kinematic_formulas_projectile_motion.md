@@ -285,7 +285,89 @@ $$\vec{s}
 
 ### Impact velocity given height
 
+<div class="row">
+	<div class="col-sm-2">
+		<div id="svg05"></div>
+	</div>
+	<div class="col-sm-3">
+		$$$$
+		$$\vec{v_{i}}= 0$$
+		$$$$
+		$$$$
+		$$$$
+		$$$$
+		$$\vec{v_{f}}= ?\quad negative \quad value$$
+	</div>
+	<div class="col-sm-7">
+		<div class="panel">
+			<div class="panel-heading">
+				Throw a rock off to the ground.
+				How fast is it going to be  right before it hits to the ground?  
+			</div>
+			$$air \quad is \quad negligible$$
+			$$height:h \quad meters$$
+			acceleration of gravity is assumed constant and 
+			$$\vec{a_{c}}=-9.8m/s^2$$
+			$$upward:positive \quad value$$
+			$$downward:negative \quad value$$
+			$$initial \quad velocity:\vec{v_{i}}=0m/s$$
+			$$displacement:\vec{s}=\vec{v_{avg}} \centerdot \Delta t$$
+		</div>
+	</div>
+</div>
+$$average \quad velocity \quad is \quad 
+\frac{\vec{v_{i}}+\vec{v}_{f}}{2}
+=\frac{0+\vec{v}_{f}}{2}
+=\frac{\vec{v}_{f}}{2}$$
+
+$$displacement \quad is \quad
+\vec{s}=\frac{\vec{v}_{f}}{2} \centerdot \Delta t$$
+
+$$\Delta t \quad is \quad
+\Delta \vec{v}=\vec{a} \centerdot \Delta t 
+\rightarrow \Delta t=\frac{\Delta \vec{v}}{\vec{a}}$$
+
+$$displacement \quad is \quad
+\vec{s}=\frac{\vec{v}_{f}}{2} \centerdot 
+\frac{\Delta \vec{v}}{\vec{a}}$$
+
+$$change \quad in \quad velocity \quad is \quad
+\Delta \vec{v}=\vec{v_{f}}-\vec{v_{i}}
+=\vec{v_{f}}-0
+=\vec{v_{f}}$$
+
+$$displacement \quad is \quad
+\vec{s}=\frac{\vec{v}_{f}}{2} \centerdot 
+\frac{\vec{v_{f}}}{\vec{a}}$$
+
+$$\qquad \qquad \swarrow$$
+
+$$2\vec{a}\vec{s}=(\vec{v_{f}})^2$$
+$$\vec{s} = -h 
+\quad A \quad rock \quad falls \quad down, \quad so \quad
+\vec{s} \quad is \quad negative$$
+$$-19.6\frac{m}{s^2} \centerdot -hm = (\vec{v_{f}})^2$$
+$$19.6\frac{m^2}{s^2} \centerdot h = (\vec{v_{f}})^2$$
+$$final \quad velocity \quad is \quad negative \quad and \quad
+\vec{v_{f}}=-\sqrt{19.6h}\frac{m}{s}$$
+
+$$h=5m \rightarrow \vec{v_{f}}=-9.9m/s$$
+
+<div class="panel panel-danger">
+	<div class="panel-heading">impact velocity</div>
+	<div class="panel-body">
+		$$\vec{v_{f}}=-\sqrt{19.6h}\frac{m}{s}$$
+	</div>
+</div>
+
+----------------
+
 ### Viewing g as the value of Earth's gravitational field near the surface 
+
+$$g=-9.81m/s^2$$
+g is the acceleration due to gravity near Earth's surface
+for an object in free fall to the center of the Earth.
+
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -761,5 +843,104 @@ svg04.selectAll(".point04")
       .attr("stroke","#fff")
       .attr("font-size","16px")
       .style("fill","white");        
+
+/*
+	Impact velocity
+*/
+var svg05 = d3.select("#svg05")
+                .append("svg")
+                .attr("height",height)
+                .attr("width",width);
+
+/* cliff */
+var line05Data = [{"x":0,"y":100},{"x":100,"y":100},
+									{"x":100,"y":350},{"x":200,"y":350}];
+var line05 = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("linear");
+
+svg05.append("path")
+          .attr("d", line05(line05Data))
+          .attr("stroke", "#fff")
+          .attr("stroke-width", 3)
+          .attr("fill", "none");   
+
+/* curve arrow */
+var curve05Data = [{"x":100,"y":70},{"x":120,"y":75},
+									{"x":130,"y":85},{"x":135,"y":100},
+									{"x":135,"y":200}];
+var curve05 = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("basis");
+
+svg05.append("path")
+          .attr("d", curve05(curve05Data))
+          .attr("stroke", "#fff")
+          .attr("stroke-width", 1)
+          .attr("fill", "none");   
+
+/* lines height arrow & person */
+var lines05Data =[
+	{"x1":50,"y1":100,"x2":50,"y2":350},
+	{"x1":50,"y1":100,"x2":45,"y2":105},
+	{"x1":50,"y1":100,"x2":55,"y2":105},
+	{"x1":50,"y1":350,"x2":45,"y2":345},
+	{"x1":50,"y1":350,"x2":55,"y2":345},
+	{"x1":80,"y1":55,"x2":80,"y2":70},
+	{"x1":80,"y1":70,"x2":70,"y2":100},
+	{"x1":80,"y1":70,"x2":90,"y2":100},
+	{"x1":80,"y1":60,"x2":60,"y2":70},
+	{"x1":80,"y1":60,"x2":100,"y2":70},
+	{"x1":135,"y1":200,"x2":130,"y2":195},
+	{"x1":135,"y1":200,"x2":140,"y2":195}
+
+];
+
+svg05.selectAll(".hArrow05")
+			.data(lines05Data)
+			.enter()
+			.append("line")
+			.attr("class","hArrow05")
+  		.attr("x1",function(d){return d.x1})
+  		.attr("y1",function(d){return d.y1})
+  		.attr("x2",function(d){return d.x2})
+  		.attr("y2",function(d){return d.y2})
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 2);
+
+  /* texts */    
+  var text05Data = [
+        {"x":10,"y":225,"text":"h(m)"} ];    
+  
+  svg05.selectAll(".text05")
+      .data(text05Data)
+      .enter()
+      .append("text")
+      .attr("class","text05")
+      .attr("x",function(d){return d.x})
+      .attr("y",function(d){return d.y})
+      .text(function(d){return d.text})
+      .attr("stroke","#fff")
+      .attr("font-size","16px")
+      .style("fill","white");        
+
+/* a person & a rock */
+  var circle05Data = [
+  	{"cx":80,"cy":50,"r":5},
+  	{"cx":100,"cy":70,"r":2}
+  	];
+  svg05.selectAll("circle05")
+  		.data(circle05Data)
+  		.enter()
+  		.append("circle")
+     	.attr("cx",function(d){return d.cx;})
+     	.attr("cy",function(d){return d.cy;})
+     	.attr("r",function(d){return d.r;})
+     	.attr("stroke","#fff")
+     	.attr("stroke-width",2)
+     	.style("fill","none");	
+
 
 </script>

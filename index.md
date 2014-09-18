@@ -20,6 +20,12 @@ __Khan Academy__ で勉強したことのまとめです
    				<li><a href="{{ post.url }}">{{ post.postTitle }}</a></li>
  			{% endfor %}
 		</ol>			
+		<h3><span class="label label-info">Two Dimensional Motion</span></h3>
+		<ol class="post-list">
+ 			{% for post in site.categories.twod-motion %}
+   				<li><a href="{{ post.url }}">{{ post.postTitle }}</a></li>
+ 			{% endfor %}
+		</ol>			
 	</div>
 
 
