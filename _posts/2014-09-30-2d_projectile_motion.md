@@ -61,6 +61,7 @@ categories: TwoD-Motion
   };
 
   var endPoint = new Point();
+  var halfPoint = new Point();
 
   var x0 = y0 = 0;
   /* ベクトル線　描画関数　*/
@@ -74,6 +75,8 @@ categories: TwoD-Motion
     // 終点の座標
     endPoint.x = Math.floor(Math.cos(radians)*length)+x0;
     endPoint.y = Math.floor(Math.sin(radians)*length)+y0;
+    halfPoint.x = Math.floor(Math.cos(radians)*length/2)+x0;
+    halfPoint.y = Math.floor(Math.sin(radians)*length/2)+y0;
 
     vectorData.push(new Point(x0,y0));
     vectorData.push(new Point(endPoint.x,endPoint.y));
@@ -100,9 +103,24 @@ categories: TwoD-Motion
           .attr("fill", "none");   
  
     /* texts */  
- //   var delta = Math.abs(angles) <= 90 ? 10 : -10;  
-    var delta = 0;
- 
+/*
+   svg.append("foreignObject")
+    .attr("class","text")
+    .attr("hight",30)
+    .attr("width",30) 
+    .attr("x",function(){
+        //return xScale(Math.floor(Math.cos(radians)*length/2)+x0-30
+          return xScale(Math.floor(halfPoint.x));
+      })
+    .attr("y",function(d){
+        //return yScale(Math.floor(Math.sin(radians)*length/2)+y0+30)
+          return yScale(Math.floor(halfPoint.y));
+      })
+    .text(name);
+
+*/
+
+ /*
     svg.append("text")
       .attr("class","text")
       .attr("x",function(){
@@ -128,7 +146,7 @@ categories: TwoD-Motion
       .attr("stroke","#fff")
       .attr("font-size","16px")
       .style("fill","white");   
-
+*/
 
   };
 
@@ -152,28 +170,18 @@ var svg01 = d3.select("#svg01")
                 .attr("height",height)
                 .attr("width",width);
 
-  svg01
-  .append("foreignObject")
-  .attr("class","fo")
-  .attr("height",200)
-  .attr("width",200)
-  .attr("x",0)
-  .attr("y",200)
-  .text("$$ \\frac{1}{2} \\centerdot \\Delta (\\vec{a})^2$$") 
-  ;   
-
   // left right              
-  drawVector(svg01,-150,150,180,50,"gold","a");
-  drawVector(svg01,-140,150,0,50,"gold","b");               
+  drawVector(svg01,-150,150,180,50,"gold","$$\\vec{a}$$");
+  drawVector(svg01,-140,150,0,50,"gold","$$\\vec{b}$$");               
   // up down
-  drawVector(svg01,100,160,90,50,"gold","a");
-  drawVector(svg01,100,150,-90,50,"gold","b");  
+  drawVector(svg01,100,160,90,50,"gold","$$\\vec{a}$$");
+  drawVector(svg01,100,150,-90,50,"gold","$$\\vec{b}$$");  
 
-  drawVector(svg01,-150,-100,30,150,"red","a");
-  drawVector(svg01,endPoint.x,endPoint.y,-10,100,"lime","b");  
-  drawVector(svg01,-150,-100,14,235,"gold","c");
+  drawVector(svg01,-150,-100,30,150,"red","$$\\vec{a}$$");
+  drawVector(svg01,endPoint.x,endPoint.y,-10,100,"lime","$$\\vec{b}$$");  
+  drawVector(svg01,-150,-100,14,235,"gold","$$\\vec{c}$$");
 
-
+/*
   var textData = [
     {"x":-150,"y":190,"text":"one dimention vectors"},
     {"x":-150,"y":0,"text":"two dimentions vectors"}
@@ -190,6 +198,37 @@ var svg01 = d3.select("#svg01")
       .attr("stroke","#fff")
       .attr("font-size","18px")
       .style("fill","white"); 
-
+*/
+  var foData = [
+    {"x":-220,"y":230,
+      "text":"$$one \\quad dimention \\quad  vectors$$"},
+    {"x":-220,"y":50,
+      "text":"$$two \\quad dimentions \\quad vectors$$"},
+    {"x":-160,"y":150,
+      "text":"$$\\vec{a}$$"},
+    {"x":-90,"y":150,
+      "text":"$$\\vec{b}$$"},
+    {"x":170,"y":180,
+      "text":"$$\\vec{a}$$"},
+    {"x":170,"y":120,
+      "text":"$$\\vec{b}$$"},
+    {"x":-60,"y":-110,
+      "text":"$$\\vec{a}$$"},
+    {"x":90,"y":-70,
+      "text":"$$\\vec{b}$$"},
+    {"x":20,"y":-160,
+      "text":"$$\\vec{c}$$"}
+  ];
+  svg01.selectAll(".fo")
+  .data(foData)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo")
+//  .attr("height",30)
+//  .attr("width",200)
+  .attr("x",function(d){ return xScale(d.x) })
+  .attr("y",function(d){ return yScale(d.y) })
+  .text(function(d){return d.text;})
+  ;   
 
 </script>
