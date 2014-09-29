@@ -19,6 +19,10 @@ categories: OneD-Motion
   - speed -- 5/2 m/s 
   - distance = speed * time
 
+<div class="panel">
+  ベクトルには移動する方向がある！
+</div>
+
 ----
 
  <h4>A brick moves 5 meters in 2 seconds.</h4> 
@@ -58,6 +62,8 @@ $$\quad=\frac{5km}{1 hour}*\frac{1000}{1}*\frac{m}{km}$$
 $$\quad=5000*\frac{m}{hour}$$
 $$\quad=5000*\frac{m}{hour}*\frac{1}{3600}*\frac{hour}{seconds}$$
 $$\quad=1.39\frac{m}{s}$$
+
+秒速1.39m(1秒間に1.39m進む)
 
 ------
 

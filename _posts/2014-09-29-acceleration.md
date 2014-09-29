@@ -11,18 +11,18 @@ Acceleration: Change in velocity over time.
 
 <div class="panel">
 A car start to move to the east.<br>
-Its velocity will be 90kmph in 3 seconds.<br>
+Its velocity will be 90km/h in 3 seconds.<br>
 How much is the acceleration?
 </div>
 
 $$\vec{a}:acceleration$$
-$$\vec{v}:velocity=(90-0)kmph$$
-$$t:time=3seconds$$
+$$\Delta \vec{v}:change \quad in \quad velocity=(90-0)km/h$$
+$$\Delta t:time=3seconds$$
 
-$$\vec{a}=\frac{\vec{v}}{t}=\frac{(90-0)kmph}{3sec}
-=\frac{30kmph}{sec}$$
+$$\vec{a}=\frac{\Delta \vec{v}}{\Delta t}=\frac{(90-0)km/h}{3sec}
+=\frac{30km/h}{sec}$$
 
-※Velocity increases 30kmph every second.
+※Velocity increases 30km/h every second.
 
 $$\vec{a}=\frac{30kmph}{sec}=\frac{30\frac{km}{hour}}{sec}
 =30\frac{km}{hour*sec}*\frac{1}{3600}*\frac{hour}{sec}
@@ -30,7 +30,7 @@ $$\vec{a}=\frac{30kmph}{sec}=\frac{30\frac{km}{hour}}{sec}
 $$\quad=\frac{1}{120}\frac{km}{sec^2}*\frac{1000}{1}*\frac{meters}{km}=8.33\frac{m}{sec^2}
 =\frac{8.33\frac{m}{sec}}{sec}$$
 
-※Velocity increases 8.33mps every second.
+※Velocity increases 8.33m/s every second.
 
 <div id="svg01"></div>
 
@@ -65,14 +65,17 @@ $$velocity:\vec{v}=78\frac{m}{s}$$
 $$acceleration\vec{a}=1.0\frac{m}{s^2}$$ 
 
 if acceleratin is constant,
+<div class="panel">
 $$Average \quad velocity 
 = \frac{final \quad velocity + initial \quad velocity}{2}$$
-$$\vec{v_{a}}=\frac{(78-0)\frac{m}{s}}{2}
+</div>
+
+$$\vec{v_{a}}=\frac{(78+0)\frac{m}{s}}{2}
 =39\frac{m}{s}$$
 
-$$\vec{v}=\frac{\vec{s}}{\Delta t}\rightarrow
-\vec{s}=\vec{v}*\Delta t$$
-$$\vec{s}=39\frac{m}{s}*78s=3042m$$
+$$\vec{v}_{a}=\frac{\vec{s}}{\Delta t}\rightarrow
+\vec{s}=\vec{v}_{a}\centerdot \Delta t$$
+$$\vec{s}=39\frac{m}{s}\centerdot 78s=3042m$$
 
 --------
 

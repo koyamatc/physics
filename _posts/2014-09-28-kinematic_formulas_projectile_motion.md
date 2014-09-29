@@ -22,10 +22,13 @@ categories: OneD-Motion
 		<div id="svg01"></div>
 	</div>
 	<div class="col-sm-6">
+		final velocity
 		$$\vec{v_{f}}=5\frac{m}{s}+(4s)(2\frac{m}{s^2})
 		=5\frac{m}{s}+8\frac{m}{s}=13\frac{m}{s}$$
+		displacement1 (area of blue rectangle)
 		$$\vec{s_{1}}=\vec{v_{i}}*\Delta t 
 		= 5\frac{m}{s}*(4s) = 20m$$
+		displacement2 (area of green triangle)
 		$$\vec{s_{2}}=\frac{1}{2}*(\vec{v_{f}}-\vec{v_{i}})*\Delta t 
 		= \frac{1}{2}*(13-5)\frac{m}{s}*(4s) = 16m$$
 		$$\vec{s}=\vec{s_{1}}+\vec{s_{2}}=20m+16m=36m$$
@@ -220,14 +223,15 @@ $$\vec{s}
 
 	$$\Delta t = 5seconds \quad in \quad the \quad air.$$
 	time upward = time downward
-	_case upward_
+
+	<h4>case upward</h4>
 	$$\Delta t_{up}=2.5seconds$$
 	$$initial \quad velocity:\vec{v_{i}}$$
 	$$final \quad velocity:\vec{v_{f}}=0$$
 	$$gravity \quad acceleration:\vec{a_{g}}=-9.8m/s^2$$ 
 	$$change \quad in \quad velocity:
-	\Delta \vec{v}=\vec{v_{f}}-\vec{v_{i}} \centerdot \Delta t
-	=(0-\vec{v_{i}}) \centerdot \Delta t
+	\Delta \vec{v}=\vec{v_{f}}-\vec{v_{i}}
+	=(0-\vec{v_{i}})
 	=-\vec{v_{i}}$$
 	$$\Delta \vec{v} = \vec{a} \centerdot \Delta t$$
 </div>
@@ -247,7 +251,8 @@ $$\vec{s}=\frac{24.5 + 0}{2}m/s \centerdot 2.5s=30.625m$$
 
 <div class="panel">
 	$$\Delta t:total \quad time \quad in \quad the \quad air $$
-	$$\Delta t_{up}= \frac{\Delta t}{2}$$
+	$$\Delta t_{up}= \frac{\Delta t}{2}
+	\quad 時間全体の半分が上昇する時間$$
 	$$initial \quad velocity:\vec{v_{i}}$$
 	$$final \quad velocity:\vec{v_{f}}=0$$
 	$$change \quad in \quad velocity:

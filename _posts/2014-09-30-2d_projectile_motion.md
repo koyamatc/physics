@@ -132,7 +132,10 @@ $$\Delta t=1.02s$$
   $$\|\vec{v}_{y}\|=90sin53°$$
   $$\|\vec{v}_{x}\|=90cos53°$$
     <div class="panel">
-    $$\vec{s}=\vec{v}_{i}\centerdot \Delta t + \frac{\vec{a}}{2}\centerdot (\Delta t)^2$$
+    vertical displacement (acceleration) 
+    $$\vec{s}_{y}=\vec{v}_{i}\centerdot \Delta t + \frac{\vec{a}}{2}\centerdot (\Delta t)^2$$
+    horisontal displacement
+    $$\vec{s}_{x}=\vec{v}_{i}\centerdot \Delta t$$
     </div>
   </div>
 </div>
@@ -155,9 +158,16 @@ $$\vec{s}_{x}=90cos53°\times 14.89=806.5m$$
 
 ### Total displacement for projectile
 
-### Total final velocity for projectile
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg05"></div>
+  </div>
+  <div class="col-sm-6"></div>
+</div>
 
-### Correction to  total final velocity for projectile
+------
+
+### Total final velocity for projectile
 
 ### Projectile on an incline
 
@@ -306,17 +316,17 @@ var svg01 = d3.select("#svg01")
       "text":"$$one \\quad dimention \\quad  vectors$$"},
     {"x":-220,"y":100,
       "text":"$$two \\quad dimentions \\quad vectors$$"},
-    {"x":-180,"y":220,
+    {"x":-180,"y":240,
       "text":"$$\\vec{a}$$"},
-    {"x":-120,"y":220,
+    {"x":-120,"y":240,
       "text":"$$\\vec{b}$$"},
     {"x":105,"y":240,
       "text":"$$\\vec{a}$$"},
     {"x":105,"y":195,
       "text":"$$\\vec{b}$$"},
-    {"x":-85,"y":10,
+    {"x":-85,"y":30,
       "text":"$$\\vec{a}$$"},
-    {"x":10,"y":40,
+    {"x":10,"y":60,
       "text":"$$\\vec{b}$$"},
     {"x":-40,"y":-25,
       "text":"$$\\vec{c}$$"},
@@ -387,9 +397,9 @@ var svg02 = d3.select("#svg02")
   var foData02 = [
     {"x":0.1,"y":6,"text":"y"},
     {"x":5,"y":0.5,"text":"x"},
-    {"x":0.5,"y":1.2,"text":"$$\\theta$$"},
-    {"x":2,"y":3,"text":"$$\\vec{a}$$"},
-    {"x":2.3,"y":0.5,"text":"$$\\vec{a}_{x}$$"},
+    {"x":0.5,"y":1.4,"text":"$$\\theta$$"},
+    {"x":2,"y":3.3,"text":"$$\\vec{a}$$"},
+    {"x":2.3,"y":0.8,"text":"$$\\vec{a}_{x}$$"},
     {"x":4.2,"y":2.5,"text":"$$\\vec{a}_{y}$$"}
     
       ];
@@ -449,10 +459,10 @@ var svg03 = d3.select("#svg03")
   drawVectorB(svg03,0,0,endPoint.x,0,xScale03,yScale03,"#666");                    
 
   var foData03 = [
-    {"x":3,"y":10,"text":"$$\\vec{v}$$"},
-    {"x":3,"y":7,"text":"$$\\theta$$"},
-    {"x":4,"y":5,"text":"$$\\vec{v}_{x}$$"},
-    {"x":9,"y":9,"text":"$$\\vec{v}_{y}$$"}
+    {"x":3,"y":12,"text":"$$\\vec{v}$$"},
+    {"x":3,"y":9,"text":"$$\\theta$$"},
+    {"x":4,"y":7,"text":"$$\\vec{v}_{x}$$"},
+    {"x":9,"y":11,"text":"$$\\vec{v}_{y}$$"}
     
       ];
 
@@ -529,5 +539,39 @@ var svg04 = d3.select("#svg04")
   .html(function(d){return d.text;})
   .style("position","fixed")
   .style("font-size","1.2em");   
+
+/** Total displacement */
+var svg05 = d3.select("#svg05")
+                .append("svg")
+                .attr("height",400)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale05 = d3.scale.linear()
+                       .domain([0,300])
+                       .range([50,350]);
+  
+  var yScale05 = d3.scale.linear()
+                       .domain([300,0])
+                       .range([50,350]);                       
+
+  var line05Data = [{"x":0,"y":150},
+                    {"x":30,"y":150},
+                    {"x":30,"y":300},
+                    {"x":320,"y":300}
+                    ];                       
+  var line05 = d3.svg.line()
+        .x(function(d) { return xScale05(d.x); })
+        .y(function(d) { return yScale05(d.y); })
+        .interpolate("linear");
+
+    svg05.append("path")
+          .attr("d", line05(line05Data))
+          .attr("stroke", function(){return "#fff"})
+          .attr("class","vector")
+          .attr("stroke-width", 3)
+          .attr("fill", "none");   
+
+  drawVector(svg05,0,150,80,30,xScale05,yScale05,"lime");        
 
 </script>
