@@ -162,12 +162,67 @@ $$\vec{s}_{x}=90cos53°\times 14.89=806.5m$$
   <div class="col-sm-6">
     <div id="svg05"></div>
   </div>
-  <div class="col-sm-6"></div>
+  <div class="col-sm-6">
+    Launch a rocket
+    $$\quad velocity:30m/s$$
+    $$\quad direction:80°$$
+    How far does a rocket travel?
+    $$\|\vec{v}_{y}\|=30sin80°=29.54m/s$$
+    $$\|\vec{v}_{x}\|=30cos80°=5.21m/s$$
+
+    Vertical displacement
+    $$\vec{s}_{y}=\vec{v}_{y}\centerdot \Delta t
+                + \frac{a}{2}(\Delta t)^2$$
+    $$\vec{s}_{y}=10m$$
+    $$10m=30sin80°m/s\centerdot \Delta t -4.9m/s^2\centerdot (\Delta t)^2$$
+    $$-4.9m/s2\centerdot (\Delta t)^2 + 29.54m/s\centerdot \Delta t -10 = 0 $$
+    $$\Delta t = \frac{-29.54\pm\sqrt{29.54^2-4(-4.9)(-10)}}{-9.8}=5.67s$$
+
+    Horizontal displacement
+    $$\vec{s}_{x}=\vec{v}_{x}\centerdot \Delta t$$
+    $$\quad =30cos80°m/s\centerdot 5.67s=5.21m/s\centerdot 5.67s=29.53m$$
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg06"></div>
+  </div>
+  <div class="col-sm-6">
+    Total displacement
+    $$\vec{s}=\vec{s}_{x}+\vec{s}_{y}$$
+    $$\|\vec{s}\|=\sqrt{(\vec{s}_{x})^2+(\vec{s}_{y})^2}
+    =\sqrt{10^2+29.53^2}=31.18m$$
+  </div>
 </div>
 
 ------
 
 ### Total final velocity for projectile
+
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg07"></div>
+  </div>
+  <div class="col-sm-6">
+    Vertical chage in velocity
+    $$\vec{v}_{y}=\vec{a}_{y}\centerdot \Delta t$$
+    $$\vec{v}_{f}-\vec{v}_{i}=\vec{a}_{y}\centerdot \Delta t$$
+    $$\vec{v}_{f}-29.54m/s=-9.8m/s^2\centerdot 5.67s$$
+    $$\vec{v}_{f}=29.54m/s-9.8m/s^2\centerdot 5.67s
+    \quad = -26.03m/s\quad(downward)$$
+    Total final velocity
+    $$\|\vec{v}\|=\sqrt{(\vec{v}_{x})^2+(\vec{v}_{y})^2}
+    =\sqrt{5.21+26.03^2}=26.55m/s$$
+    $$tan\theta = \frac{26.03}{5.21}$$
+    $$\theta = tan^{-1}(\frac{26.03}{5.21})$$
+    $$\quad = -78.7 \quad (below \quad horisontal)$$
+  
+
+  </div>
+</div>
+
+-------
 
 ### Projectile on an incline
 
@@ -541,9 +596,9 @@ var svg04 = d3.select("#svg04")
   .style("font-size","1.2em");   
 
 /** Total displacement */
-var svg05 = d3.select("#svg05")
+  var svg05 = d3.select("#svg05")
                 .append("svg")
-                .attr("height",400)
+                .attr("height",600)
                 .attr("width",400)
                 .style("background","black");
 
@@ -552,14 +607,16 @@ var svg05 = d3.select("#svg05")
                        .range([50,350]);
   
   var yScale05 = d3.scale.linear()
-                       .domain([300,0])
-                       .range([50,350]);                       
+                       .domain([550,0])
+                       .range([50,550]);                       
 
+  // draw ground
   var line05Data = [{"x":0,"y":150},
                     {"x":30,"y":150},
                     {"x":30,"y":300},
                     {"x":320,"y":300}
-                    ];                       
+                    ]; 
+
   var line05 = d3.svg.line()
         .x(function(d) { return xScale05(d.x); })
         .y(function(d) { return yScale05(d.y); })
@@ -572,6 +629,130 @@ var svg05 = d3.select("#svg05")
           .attr("stroke-width", 3)
           .attr("fill", "none");   
 
-  drawVector(svg05,0,150,80,30,xScale05,yScale05,"lime");        
+  var projectile05Data =[];
+  for (var i = 0; i < 5.45; i=i+0.05) {
+    projectile05Data.push(i);      
+  };
+
+  var projectile05 = d3.svg.line()
+        .x(function(d) { return xScale05(5.21*d*10); })
+        .y(function(d) { return yScale05((29.54*d-4.9*d*d)*10+150); })
+        .interpolate("linear");
+
+ svg05.append("path")
+        .attr("d", projectile05(projectile05Data))
+        .attr("stroke", function(){return "#666"})
+        .attr("class","projectile05")
+        .attr("stroke-width", 1)
+        .attr("fill", "none");   
+
+
+
+  drawVector(svg05,0,150,80,30,xScale05,yScale05,"lime");
+  // height
+  drawVectorB(svg05,40,147,40,300,xScale05,yScale05,"#f00");
+  drawVectorB(svg05,40,300,40,147,xScale05,yScale05,"#f00");
+  // horisontal
+  drawVectorB(svg05,0,140,27,140,xScale05,yScale05,"#f00");
+  drawVectorB(svg05,27,140,0,140,xScale05,yScale05,"#f00");
+
+  drawVectorB(svg05,0,100,295.3,100,xScale05,yScale05,"gold");
+  drawVectorB(svg05,295.3,100,0,100,xScale05,yScale05,"gold");
+
+  var foData05 = [
+    {"x":0,"y":180,"text":"$$2m$$"},
+    {"x":50,"y":300,"text":"$$10m$$"},
+    {"x":-30,"y":210,"text":"$$80°$$"},
+    {"x":-40,"y":250,"text":"$$30m/s$$"},
+    {"x":120,"y":120,"text":"$$29.53m$$"}
+      ];
+
+  svg05.selectAll(".fo05")
+  .data(foData05)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo05")
+  .attr("x",function(d){ return xScale05(d.x) })
+  .attr("y",function(d){ return yScale05(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
+  var svg06 = d3.select("#svg06")
+                .append("svg")
+                .attr("height",250)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale06 = d3.scale.linear()
+                       .domain([0,300])
+                       .range([50,350]);
+  
+  var yScale06 = d3.scale.linear()
+                       .domain([150,-50])
+                       .range([50,250]);                       
+
+  drawVectorB(svg06,0,0,295,0,xScale06,yScale06,"#666");
+  drawVectorB(svg06,295,0,295,100,xScale06,yScale06,"#666");
+  drawVectorB(svg06,0,0,295,100,xScale06,yScale06,"lime");
+
+  var foData06 = [
+    {"x":130,"y":130,"text":"$$31.18m$$"},
+    {"x":300,"y":100,"text":"$$10m$$"},
+    {"x":120,"y":30,"text":"$$29.53m$$"}
+      ];
+
+  svg06.selectAll(".fo06")
+  .data(foData06)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo06")
+  .attr("x",function(d){ return xScale06(d.x) })
+  .attr("y",function(d){ return yScale06(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
+/* total final velocity */
+  var svg07 = d3.select("#svg07")
+                .append("svg")
+                .attr("height",400)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale07 = d3.scale.linear()
+                       .domain([0,30])
+                       .range([100,350]);
+  
+  var yScale07 = d3.scale.linear()
+                       .domain([0,-30])
+                       .range([100,350]);                       
+
+  drawVectorB(svg07,0,0,5.21,0,xScale07,yScale07,"#666");
+  drawVectorB(svg07,0,0,0,-26.03,xScale07,yScale07,"#666");
+  drawVectorB(svg07,5.21,0,5.21,-26.03,xScale07,yScale07,"blue");
+  drawVectorB(svg07,0,0,5.21,-26.03,xScale07,yScale07,"lime");
+
+  var foData07 = [
+    {"x":1,"y":10,"text":"$$5.21$$"},
+    {"x":-8,"y":-10,"text":"$$26.03$$"},
+    {"x":3,"y":-5,"text":"$$26.55$$"},
+    {"x":1,"y":5,"text":"$$\\theta$$"}
+      ];
+
+  svg07.selectAll(".fo07")
+  .data(foData07)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo07")
+  .attr("x",function(d){ return xScale07(d.x) })
+  .attr("y",function(d){ return yScale07(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
 
 </script>
