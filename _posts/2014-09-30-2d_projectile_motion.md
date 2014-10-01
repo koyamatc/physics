@@ -226,12 +226,112 @@ $$\vec{s}_{x}=90cos53°\times 14.89=806.5m$$
 
 ### Projectile on an incline
 
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg08"></div>
+  </div>
+  <div class="col-sm-6">
+  an incline
+  $$\quad degrees:30°$$
+  projectile
+  $$\quad direction:15°$$
+  $$\quad velocity:10m/s$$
+  $$$$
+  $$\|\vec{v}_{y}\|=10sin(15°+30°)=\frac{\sqrt{2}}{2}m/s$$
+  $$\|\vec{v}_{x}\|=10cos(15°+30°)=\frac{\sqrt{2}}{2}m/s$$
+  vertical displacement
+  $$\vec{s}_{y}=\vec{v}_{y}\centerdot \Delta t 
+               + \frac{a}{2}\centerdot (\Delta t)^2$$
+  $$\quad = 10sin45°\centerdot \Delta t 
+               + \frac{-9.8}{2}\centerdot (\Delta t)^2$$
+  $$\quad = 5\sqrt{2}\centerdot \Delta t 
+               - 4.9\centerdot (\Delta t)^2$$
+  horizontal displacement
+  $$\vec{s}_{x}=\vec{v}_{x}\centerdot \Delta t$$
+  $$\quad = 10cos45°\centerdot \Delta t$$
+  $$\quad = 5\sqrt{2}\centerdot \Delta t
+  \rightarrow \Delta t=\frac{\vec{s}_{x}}{5\sqrt{2}}$$
+  tangent
+  $$tan30°=\frac{\|\vec{s}_{y}\|}{\|\vec{s}_{x}\|}
+    =\frac{sin30°}{cos30°}=\frac{\frac{1}{2}}{\frac{\sqrt{3}}{2}}
+    =\frac{1}{\sqrt{3}}$$
+  $$\frac{\|\vec{s}_{y}\|}{\|\vec{s}_{x}\|}=\frac{1}{\sqrt{3}}
+  \rightarrow \vec{s}_{x}=\sqrt{3}\vec{s}_{y}$$
+  $$\Delta t=\frac{\vec{s}_{x}}{5\sqrt{2}}
+  =\frac{\sqrt{3}\vec{s}_{y}}{5\sqrt{2}}$$
+  vertical displacement
+  $$\vec{s}_{y}=5\sqrt{2}\centerdot \Delta t 
+               - 4.9\centerdot (\Delta t)^2$$
+  $$\quad=5\sqrt{2}\centerdot \frac{\sqrt{3}\vec{s}_{y}}{5\sqrt{2}} 
+               - 4.9\centerdot (\frac{\sqrt{3}\vec{s}_{y}}{5\sqrt{2}})^2$$
+  $$\quad=\sqrt{3}\vec{s}_{y}-\frac{4.9\times 3}{50}\vec{s}_{y}^2$$
+  $$\downarrow$$
+  $$0=\sqrt{3}\vec{s}_{y}-\vec{s}_{y}-\frac{4.9\times 3}{50}\vec{s}_{y}^2$$
+  $$0=(\sqrt{3}-1)\vec{s}_{y}-\frac{4.9\times 3}{50}\vec{s}_{y}^2$$
+  $$0=((\sqrt{3}-1)-\frac{4.9\times 3}{50}\vec{s}_{y})\vec{s}_{y}$$
+  $$\vec{s}_{y}=0 \quad or$$
+  $$(\sqrt{3}-1)-\frac{4.9\times 3}{50}\vec{s}_{y}=0$$
+  $$\vec{s}_{y}=(\sqrt{3}-1)\cdot \frac{50}{4.9\times 3}=2.49m$$
+  $$\vec{s}_{x}=\sqrt{3}\cdot \vec{s}_{y}=\sqrt{3}\cdot2.49=4.31m$$
+  </div>
+</div>
+
+-------
+
 ### Unit vectors and engineering notation
+
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg09"></div>
+  </div>
+  <div class="col-sm-6">
+  $$\vec{s}_{y}=10\cdot sin(30°)=10\cdot\frac{1}{2}=5$$
+  $$\vec{s}_{x}=10\cdot cos(30°)=10\cdot\frac{\sqrt{3}}{2}=5\sqrt{3}$$
+  define unit vectors<br>
+  vertical unit vector
+  $$\quad \hat{j}=\vec{1} \rightarrow \vec{s}_{y}=5\hat{j}$$  
+  horizontal unit vector
+  $$\quad \hat{i}=\vec{1} \rightarrow \vec{s}_{x}=5\sqrt{3}\hat{i}$$
+  </div>
+</div>
+
+-------
 
 ### Unit vector notation
 
-### Unit vector notation(part 2)
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg10"></div>
+  </div>
+  <div class="col-sm-6">
+  horisontal unit vector
+  $$\hat{i}=1$$
 
+  vertical unit vector
+  $$\hat{j}=1$$ 
+
+  unit vector notation
+  $$\vec{a}= 10\hat{i} + 3\hat{j}$$
+  $$\vec{b}= 2\hat{i} + 4\hat{j}$$
+  $$\vec{a}+\vec{b}= (10+2)\hat{i} + (3+4)\hat{j}$$
+  $$\vec{a}+\vec{b}= 12\hat{i} + 7\hat{j}$$
+  </div>
+</div>
+
+-------
+### Unit vector notation(part 2)
+<div class="row">
+  <div class="col-sm-6">
+    <div id="svg11"></div>
+  </div>
+  <div class="col-sm-6">
+    $$\vec{a}=-3\hat{i} + 2\hat{j}$$
+    $$\vec{b}=2\hat{i} + 4\hat{j}$$
+    $$\vec{a}+\vec{b}=(-3+2)\hat{i} + (2+4)\hat{j}=-1\hat{i}+6\hat{j}$$
+  </div>
+</div>
+
+--------
 ### Projectile motion with ordered set notation  
  
 
@@ -409,7 +509,7 @@ var svg01 = d3.select("#svg01")
   .style("font-size","1.2em");   
 
 /** */
-var svg02 = d3.select("#svg02")
+  var svg02 = d3.select("#svg02")
                 .append("svg")
                 .attr("height",400)
                 .attr("width",400)
@@ -754,5 +854,262 @@ var svg04 = d3.select("#svg04")
   .style("position","fixed")
   .style("font-size",".9em");   
 
+/* total final velocity */
+  var svg08 = d3.select("#svg08")
+                .append("svg")
+                .attr("height",400)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale08 = d3.scale.linear()
+                       .domain([0,5])
+                       .range([50,350]);
+  
+  var yScale08 = d3.scale.linear()
+                       .domain([5,0])
+                       .range([50,350]);                       
+
+  var ground08Data = [
+    {"x1":0,"y1":0,"x2":50,"y2":0,"color":"brown"},
+    {"x1":0,"y1":0,"x2":50,"y2":33*Math.sin(pi/3),"color":"green"}
+  ];                       
+
+  svg08.selectAll(".ground08")
+        .data(ground08Data)
+        .enter()
+        .append("line")
+        .attr("x1", function(d){return xScale08(d.x1);})
+        .attr("y1", function(d){return yScale08(d.y1);})
+        .attr("x2", function(d){return xScale08(d.x2);})
+        .attr("y2", function(d){return yScale08(d.y2);})
+        .attr("stroke", function(d){return d.color;})
+        .attr("stroke-width", function(d){return 3;});
+
+
+
+  drawVector(svg08,0,0,45,3,xScale08,yScale08,"#f00");
+  drawVectorB(svg08,4.31,0,4.31,2.49,xScale08,yScale08,"#666");
+  drawVectorB(svg08,0,0,4.31,0,xScale08,yScale08,"#666");
+
+  var projectile08Data =[];
+  for (var i = 0; i < 5; i=i+0.02) {
+    projectile08Data.push(i);      
+  };
+
+  var projectile08 = d3.svg.line()
+        .x(function(d) { return xScale08(5*Math.sqrt(2)*d); })
+        .y(function(d) { return yScale08((5*Math.sqrt(2)*d-4.9*d*d)); })
+        .interpolate("linear");
+
+ svg08.append("path")
+        .attr("d", projectile08(projectile08Data))
+        .attr("stroke", function(){return "#666"})
+        .attr("class","projectile08")
+        .attr("stroke-width", 1)
+        .attr("fill", "none");   
+
+  var foData08 = [
+    {"x":2,"y":3.5,"text":"$$10m/s$$"},
+    {"x":4.5,"y":2,"text":"$$\\vec{s}_{y}$$"},
+    {"x":2.5,"y":0.5,"text":"$$\\vec{s}_{x}$$"},
+    {"x":0,"y":1.5,"text":"$$15°$$"},
+    {"x":1,"y":1.2,"text":"$$30°$$"}
+      ];
+
+  svg08.selectAll(".fo08")
+  .data(foData08)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo08")
+  .attr("x",function(d){ return xScale08(d.x) })
+  .attr("y",function(d){ return yScale08(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
+/** unit vector and engineering notation */
+  var svg09 = d3.select("#svg09")
+                .append("svg")
+                .attr("height",500)
+                .attr("width",500)
+                .style("background","black");
+
+  var xScale09 = d3.scale.linear()
+                       .domain([-10,10])
+                       .range([50,450]);
+  
+  var yScale09 = d3.scale.linear()
+                       .domain([10,-10])
+                       .range([50,450]);                       
+
+  var xAxis09 = d3.svg.axis()
+                  .scale(xScale09)
+                  .tickValues([])
+                  .tickPadding(5)
+                  .tickFormat(d3.format("d"));
+
+  var xAxis09Group = svg09.append("g")
+                      .attr("transform","translate(0,"+ yScale09(0)+")")
+                      .attr("stroke","white")
+                      .call(xAxis09);   
+
+  var yAxis09 = d3.svg.axis()
+                  .scale(yScale09)
+                  .orient(["left"])
+                  .tickValues([])
+                  .tickPadding(0);
+
+  var yAxis09Group = svg09.append("g")
+                      .attr("transform","translate(" + xScale09(0) + ",0)")
+                      .attr("stroke","white")
+                      .call(yAxis09);
+
+  drawVector(svg09,0,0,30,10,xScale09,yScale09,"lime");
+  drawVectorB(svg09,Math.cos(pi/6)*10,0,Math.cos(pi/6)*10,Math.sin(pi/6)*10,xScale09,yScale09,"#666");
+  drawVectorB(svg09,0,0,Math.cos(pi/6)*10,0,xScale09,yScale09,"#666");
+  drawVectorB(svg09,0,0,1,0,xScale09,yScale09,"gold");
+  drawVectorB(svg09,0,0,0,1,xScale09,yScale09,"gold");
+
+  var foData09 = [
+    {"x":9,"y":9,"text":"$$10m/s$$"},
+    {"x":10,"y":5,"text":"$$\\vec{s}_{y}$$"},
+    {"x":4.5,"y":2,"text":"$$\\vec{s}_{x}$$"},
+    {"x":2,"y":3.5,"text":"$$30°$$"},
+    {"x":1,"y":2,"text":"$$\\hat{i}$$"},
+    {"x":-1,"y":4,"text":"$$\\hat{j}$$"}
+      ];
+
+  svg09.selectAll(".fo09")
+  .data(foData09)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo09")
+  .attr("x",function(d){ return xScale09(d.x) })
+  .attr("y",function(d){ return yScale09(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
+/** unit vector notation */
+  var svg10 = d3.select("#svg10")
+                .append("svg")
+                .attr("height",400)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale10 = d3.scale.linear()
+                       .domain([-3,3])
+                       .range([50,350]);
+  
+  var yScale10 = d3.scale.linear()
+                       .domain([3,-3])
+                       .range([50,350]);                       
+
+  var xAxis10 = d3.svg.axis()
+                  .scale(xScale10)
+                  .tickValues([1,2])
+                  .tickPadding(5)
+                  .tickFormat(d3.format("d"));
+
+  var xAxis10Group = svg10.append("g")
+                      .attr("transform","translate(0,"+ yScale10(0)+")")
+                      .attr("stroke","white")
+                      .call(xAxis10);   
+
+  var yAxis10 = d3.svg.axis()
+                  .scale(yScale10)
+                  .orient(["left"])
+                  .tickValues([1,2])
+                  .tickPadding(0)
+                  .tickFormat(d3.format("d"));
+
+  var yAxis10Group = svg10.append("g")
+                      .attr("transform","translate(" + xScale10(0) + ",0)")
+                      .attr("stroke","white")
+                      .call(yAxis10);
+
+  drawVector(svg10,0,0,0,1,xScale10,yScale10,"lime");
+  drawVector(svg10,0,0,90,1,xScale10,yScale10,"lime");
+
+  var foData10 = [
+    {"x":1,"y":1.5,"text":"$$\\hat{i}$$"},
+    {"x":0.3,"y":2.2,"text":"$$\\hat{j}$$"}
+      ];
+
+  svg10.selectAll(".fo10")
+  .data(foData10)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo10")
+  .attr("x",function(d){ return xScale10(d.x) })
+  .attr("y",function(d){ return yScale10(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
+
+/** unit vector notation part2*/
+  var svg11 = d3.select("#svg11")
+                .append("svg")
+                .attr("height",400)
+                .attr("width",400)
+                .style("background","black");
+
+  var xScale11 = d3.scale.linear()
+                       .domain([-4,4])
+                       .range([50,350]);
+  
+  var yScale11 = d3.scale.linear()
+                       .domain([7,-1])
+                       .range([50,350]);                       
+
+  var xAxis11 = d3.svg.axis()
+                  .scale(xScale11)
+                  .tickValues([-5,-4,-3,-2,-1,1,2,3])
+                  .tickPadding(5)
+                  .tickFormat(d3.format("d"));
+
+  var xAxis11Group = svg11.append("g")
+                      .attr("transform","translate(0,"+ yScale11(0)+")")
+                      .attr("stroke","white")
+                      .call(xAxis11);   
+
+  var yAxis11 = d3.svg.axis()
+                  .scale(yScale11)
+                  .orient(["left"])
+                  .tickValues([-1,1,2,3,4,5,6,7])
+                  .tickPadding(0)
+                  .tickFormat(d3.format("d"));
+
+  var yAxis11Group = svg11.append("g")
+                      .attr("transform","translate(" + xScale11(0) + ",0)")
+                      .attr("stroke","white")
+                      .call(yAxis11);
+
+  drawVectorB(svg11,0,0,-3,2,xScale11,yScale11,"lime");
+  drawVectorB(svg11,0,0,2,4,xScale11,yScale11,"gold");
+  drawVectorB(svg11,2,4,-1,6,xScale11,yScale11,"green");
+  drawVectorB(svg11,0,0,-1,6,xScale11,yScale11,"red");
+
+  var foData11 = [
+    {"x":-2,"y":2,"text":"$$\\vec{a}$$"},
+    {"x":1.5,"y":4,"text":"$$\\vec{b}$$"},
+    {"x":1,"y":7,"text":"$$\\vec{a'}$$"},
+    {"x":-2,"y":4.5,"text":"$$\\vec{a}+\\vec{b}$$"}
+      ];
+
+  svg11.selectAll(".fo11")
+  .data(foData11)
+  .enter()
+  .append("foreignObject")
+  .attr("class","fo11")
+  .attr("x",function(d){ return xScale11(d.x) })
+  .attr("y",function(d){ return yScale11(d.y) })
+  .append("xhtml:body")
+  .html(function(d){return d.text;})
+  .style("position","fixed")
+  .style("font-size",".9em");   
 
 </script>
