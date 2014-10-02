@@ -87,8 +87,11 @@ $$d(\theta)=\frac{2s^2}{g}cos\theta sin\theta
   <div class="col-sm-7">
   $$d(\theta)=\frac{2s^2}{g}cos\theta sin\theta 
   \quad (0 \ge \theta \ge 90)$$
+  $$d(\theta)の導関数d'(\theta)を求めます$$
   $$d'(\theta)=\frac{2s^2}{g}(-sin^2\theta+cos^2\theta)$$
+  $$導関数d'(\theta)が表すd(\theta)の接線の傾きが0のとき、d(\theta)の値は最大となります$$
   $$\frac{2s^2}{g}(-sin^2\theta+cos^2\theta)=0$$
+  $$s=0のときは考えません$$
   $$-sin^2\theta+cos^2\theta=0$$
   $$cos^2\theta=sin^2\theta$$
   $$\frac{cos^2\theta}{cos^2\theta}=\frac{sin^2\theta}{cos^2\theta}$$
@@ -106,7 +109,11 @@ $$d(\theta)=\frac{2s^2}{g}cos\theta sin\theta
   $$sin45°=\frac{\sqrt{2}}{2} \qquad cos45°=\frac{\sqrt{2}}{2}$$
   $$d(\theta)=\frac{2s^2}{g}cos\theta sin\theta$$
   $$\quad=\frac{2s^2}{g} \cdot \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2}$$
+  <h3>
   $$\quad=\frac{s^2}{g}$$
+  </h3>
+
+
   $$s=10m/s \quad g=10m/s^2$$
   $$d=100/10=10m$$
   </div>
