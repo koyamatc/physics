@@ -141,7 +141,7 @@
   };
 
   /** draw text*/
-  function drawText(svg,data,fontSize,xScale,yScale){
+  function drawMathJax(svg,data,fontSize,xScale,yScale){
     svg.selectAll("foreignObject")
     .data(data)
     .enter()
@@ -150,10 +150,27 @@
     .attr("y",function(d){ return yScale(d.y) })
     .append("xhtml:body")
     .html(function(d){return d.text;})
+    .attr("transform","translate(300,150) rotate(45)")
     .style("position","fixed")
     .style("font-size",function(){return fontSize;});
 
   }
+
+  function drawText(svg,data,xScale,yScale){
+      svg.selectAll(".text")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("x",function(d){return xScale(d.x)})
+      .attr("y",function(d){return yScale(d.y)})
+      .text(function(d){return d.text})
+      .attr("class","text")
+      .attr("stroke",function(d){return d.stroke})
+      .attr("font-size",function(d){return d.fontSize})
+      .style("fill",function(d){return d.stroke})
+      .attr("transform","rotate(45)");   
+  }
+  
 
   /** draw circle */
   function drawCircle(svg,data,xScale,yScale){

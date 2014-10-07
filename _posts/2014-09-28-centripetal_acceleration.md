@@ -12,6 +12,13 @@ categories: TwoD-Motion
     <div id="svg01"></div>
   </div>
   <div class="col-sm-5">
+  A car turns around a corner.
+  $$\quad constant \quad speed:100km/h$$
+  Speed is scalar and not changing.<br>
+  Velocity:magnitude and direction.<br>
+  Direction is changing, that is velocity is changing<br>
+  <h3 class="text-gold">Acceleration is there!</h3>
+  Inward acceleration changes direction
   </div>
 </div>
 
@@ -36,6 +43,7 @@ categories: TwoD-Motion
     <div id="svg03"></div>
   </div>
   <div class="col-sm-5">
+
   </div>
 </div>
 
@@ -100,15 +108,16 @@ categories: TwoD-Motion
   drawVector(svg01,300*Math.cos(60*aDegree),300*Math.sin(60*aDegree),-30,100,xScale01,yScale01,"#00f");
   drawVector(svg01,300*Math.cos(45*aDegree),300*Math.sin(45*aDegree),-45,100,xScale01,yScale01,"#00f");
 
-/**
+
   var foData01 = [
-    {"x":6,"y":15,"text":"$$\\textcolor(red) \\vec{s}$$"},
-    {"x":2,"y":7.7,"text":"$$\\theta$$"},
-    {"x":40,"y":5,"text":"$$d$$"}
+    {"x":200,"y":250,"text":"vec{s}","stroke":"gold","fontSize":"16px"},
+    {"x":200,"y":200,"text":"theta","stroke":"gold","fontSize":"16px"},
+    {"x":140,"y":155,"text":"d","stroke":"gold","fontSize":"16px"}
       ];
 
-  drawText(svg01,foData01,"1.5em",xScale01,yScale01);
-*/
+ 
+  drawText(svg01,foData01,xScale01,yScale01);
+
 
 /**  */
   var svg02 = d3.select("#svg02")
