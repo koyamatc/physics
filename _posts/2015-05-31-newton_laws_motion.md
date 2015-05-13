@@ -36,6 +36,13 @@ categories: newton-laws-motion
 </ul>
 $$\vec{F}=10Nの力が、m=2kg\,の物体にかかった時の加速度\,\vec{a}\,は？$$
 $$\vec{a}=\frac{10kg \cdot m/s^2}{2kg}=5m/s^2$$
+$$\vec{F}=20Nの力が、m=2kg\,の物体にかかった時の加速度\,\vec{a}\,は？$$
+$$\vec{a}=\frac{20kg \cdot m/s^2}{2kg}=10m/s^2$$
+力が２倍になると、加速度も２倍になる
+$$\vec{F}=20Nの力が、m=4kg\,の物体にかかった時の加速度\,\vec{a}\,は？$$
+$$\vec{a}=\frac{20kg \cdot m/s^2}{4kg}=5m/s^2$$
+質量が２倍になると、加速度は1/2になる。
+質量の大きなものを動かそうとすると、より大きな力を必要とする。
 </h3>
 
 -----
@@ -44,6 +51,7 @@ $$\vec{a}=\frac{10kg \cdot m/s^2}{2kg}=5m/s^2$$
 
 <h3>
 <div class="panel">
+  To every action there is always an equal and opposite reaction or the forces of two bodies on each other are always equal and are directed in opposite directions 
 </div>
 </h3>
 
