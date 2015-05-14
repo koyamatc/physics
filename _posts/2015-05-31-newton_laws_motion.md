@@ -1,6 +1,7 @@
 ---
 title: physics
 layout: post
+date: 2015-05-31 23:00:00
 postTitle: Newton's laws of motion 
 categories: newton-laws-motion
 ---
