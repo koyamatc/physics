@@ -14,6 +14,30 @@ categories: newton-laws-motion
     <div id="svg01"></div>
   </div>
   <div class="col-sm-6">
+    角度 \\(\theta\\) の斜面に、ブロックがあります<br>
+    ブロックの質量(mass)は \\(m\\)<br>
+    このブロックにかかる重力は　\\(\vec{F}_{g}=m\cdot \vec{g}\\)<br>
+    ブロックが地面から受ける力を考えるときに、重力に対して垂直ではないので
+    重力を２つの力、地面に垂直な力と、地面に水平な力に分けて考えます<br>
+    地面に垂直な力\\(\vec{F}_{g\bot}\\)
+    $$
+    \frac{\lVert\vec{F}_{g\bot}\rVert}{\lVert m\vec{g}\rVert}
+    = \cos \theta
+    $$
+    $$
+    \lVert\vec{F}_{g\bot}\rVert
+    =\lVert m\vec{g}\rVert\cos \theta
+    $$
+    地面に平行な力を\\(\vec{F}_{g\lVert}\\)<br>
+    $$
+    \frac{\lVert\vec{F}_{g\lVert}\rVert}{\lVert m\vec{g}\rVert}
+    = \sin \theta
+    $$
+    $$
+    \lVert\vec{F}_{g\lVert}\rVert
+    =\lVert m\vec{g}\rVert\sin \theta
+    $$
+
   </div>
 </div>
   
@@ -58,6 +82,13 @@ categories: newton-laws-motion
       "stroke":"#fff","strokeWidth":"2px"},
     {"x1":150-40,"y1":75+80,"x2":250-40,"y2":125+80,
       "stroke":"#fff","strokeWidth":"2px"},
+
+    {"x1":370,"y1":00,"x2":370,"y2":30,
+      "stroke":"#fff","strokeWidth":"2px"},
+    {"x1":370,"y1":30,"x2":400,"y2":30,
+      "stroke":"#fff","strokeWidth":"2px"},
+
+
   ];
 
   rectData = [
@@ -67,28 +98,29 @@ categories: newton-laws-motion
 
   vecData01 = [
     {"x1":180,"y1":140,"angles":-90,"length":100,
-      "stroke":"#f0f","strokeWidth":"3px"}
-  ];
-  vecData02 = [
-    {"x1":250,"y1":150,"angles":90,"length":100,
       "stroke":"#f0f","strokeWidth":"3px"},
-    {"x1":250,"y1":150,"angles":-90,"length":100,
-      "stroke":"#0f0","strokeWidth":"3px"},
-    {"x1":250,"y1":150,"angles":0,"length":200,
-      "stroke":"#fff","strokeWidth":"3px"}
+    {"x1":180,"y1":140,"angles":206,"length":40,
+      "stroke":"#ff0","strokeWidth":"2px"},
+    {"x1":180,"y1":140,"angles":-64,"length":90,
+      "stroke":"#ff0","strokeWidth":"2px"},
+    {"x1":220,"y1":57,"angles":206,"length":40,
+      "stroke":"#ff0","strokeWidth":"2px"},
   ];
   textData01 = [
-    {"x":255,"y":50,"text":"49N","stroke":"#fff","fontSize":"20px"},
-    {"x":255,"y":255,"text":"49N","stroke":"#fff","fontSize":"20px"},
-  ];
-  textData02 = [
-    {"x":255,"y":50,"text":"49N","stroke":"#fff","fontSize":"20px"},
-    {"x":255,"y":255,"text":"49N","stroke":"#fff","fontSize":"20px"},
-    {"x":400,"y":130,"text":"5m/s","stroke":"#fff","fontSize":"20px"},
+    {"x":230,"y":280,"text":"$$mass=m$$","fontSize":"20px"},
+    {"x":150,"y":120,"text":"$$\\vec{F}_{g}$$",
+      "fontSize":"20px"},
+    {"x":220,"y":150,"text":"$$\\vec{F}_{g\\bot}$$",
+      "fontSize":"20px"},
+    {"x":150,"y":220,"text":"$$\\vec{F}_{g\\lVert}$$","fontSize":"20px"},
+    {"x":50,"y":75,"text":"$$\\theta$$",
+      "fontSize":"20px"},
+    {"x":340,"y":220,"text":"$$90°-\\theta$$",
+      "fontSize":"16px"},
   ];
 
   drawLine(svg01,lineData01,xScale01,yScale01);
   drawVectorA(svg01,vecData01,xScale01,yScale01);
- 
+  drawMathjax(svg01,textData01,xScale01,yScale01)
 
 </script>
